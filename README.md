@@ -1,2 +1,2 @@
-# myconfigurations
-Linux and IDE configs
+# Linux and IDE Configs
+Common repo for my configurations
