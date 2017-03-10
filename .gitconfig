@@ -1,0 +1,36 @@
+[user]
+	email = <email_here>
+	name = Tuomo Heino
+[push]
+	default = simple
+[merge]
+	tool = meld
+[alias]
+    aliases = "!git config -l | grep alias | cut -c 7-"
+    # Logging
+    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
+    lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+    ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+    le = log --oneline --decorate
+    logtree = log --graph --oneline --decorate --all
+    # Difference to last HEAD
+    dlc = diff --cached HEAD^
+    # Add done to current branch' name
+    done = "!f() { git branch | grep "$1" | cut -c 3- | grep -v done | xargs -I{} git branch -m {} done-{}; }; f"
+    # Convinient short cuts
+    st = status
+    s = status -s
+    append = commit --amend --no-edit
+    master = checkout master
+    co = checkout
+    cd = checkout
+    cl = clone
+    ci = commit
+    br = branch
+    sl = stash list
+    sa = stash apply
+    ss = stash save
+[core]
+	editor = nano
